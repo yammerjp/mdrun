@@ -25,6 +25,7 @@ func Execute(commandString string) {
 	go scanAndPrint(stdout, os.Stdout)
 	go scanAndPrint(stderr, os.Stderr)
 	execCmd.Wait()
+	os.Exit(execCmd.ProcessState.ExitCode())
 }
 
 func scanAndPrint(r io.ReadCloser, fp *os.File) {

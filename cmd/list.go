@@ -10,13 +10,8 @@ import (
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+  Short: "Show commands that defined in the target markdown file (default: README.md)",
+	Long: `The "mdrun list" subcommand produces standard output of the commands defined in the target markdown file, one line for each code block. This is the same as each line that is ambiguously searched when the "mdrun" command is executed.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		commandBlocks, err := markdown.ExtractFile(targetFilePath)
 		if err != nil {

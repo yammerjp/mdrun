@@ -21,7 +21,7 @@ func TestExtractFile(t *testing.T) {
 		expected := onelineStrings[i]
 		actual := commandBlock.CommandOneLineString()
 		if expected != actual {
-			t.Errorf("commandBlocks[%d] must be %s, but %s", i, expected, actual)
+			t.Errorf("commandBlocks[%d] must be\n%s\nbut\n%s\n", i, expected, actual)
 		}
 	}
 }

@@ -37,6 +37,7 @@ func (c CommandBlock) CommandOneLineString() string {
 	cmd := c.Command
 	cmd = strings.ReplaceAll(c.Command, "\\\n", " ")
 	cmd = rmCommentLine(cmd)
+	cmd = rmEmptyLine(cmd)
 	cmd = rmLastBr(cmd)
 	cmd = rmLineHeadDollerAndPercent(cmd)
 	cmd = strings.ReplaceAll(cmd, "\n", "; ")

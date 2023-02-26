@@ -17,7 +17,7 @@ func Select(commandBlocks []markdown.CommandBlock) markdown.CommandBlock {
 		},
 		fuzzyfinder.WithPreviewWindow(func(i, w, h int) string {
 			return fmt.Sprintf(
-				"%s\n---\n\n```\n%s\n```",
+				"%s\n---\n\n```\n%s```",
 				commandBlocks[i].Title,
 				commandBlocks[i].Command,
 			)

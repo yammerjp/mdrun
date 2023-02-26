@@ -16,3 +16,13 @@ go install github.com/yammerjp/mdrun
 ```
 mdrun list
 ```
+
+## Debug for mdrun
+
+```
+$ echo "hello, world"
+$ echo "hello, world"
+ % ls -al
+ $echo "hello"
+ %ls -al
+```

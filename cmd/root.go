@@ -55,6 +55,8 @@ func Execute() {
 	}
 }
 
+var targetFilePath string
+
 func init() {
 	cobra.OnInitialize(initConfig)
 
@@ -66,7 +68,7 @@ func init() {
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.PersistentFlags().StringVarP(&targetFilePath, "target", "t", "README.md", "the markdown file which task defined ")
 }
 
 // initConfig reads in config file and ENV variables if set.

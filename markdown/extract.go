@@ -8,10 +8,6 @@ import (
 	"io/ioutil"
 )
 
-func ExtractReadme() ([]CommandBlock, error) {
-	return ExtractFile("README.md")
-}
-
 func ExtractFile(path string) ([]CommandBlock, error) {
 	content, err := ioutil.ReadFile(path)
 	if err != nil {

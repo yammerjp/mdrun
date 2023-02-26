@@ -48,7 +48,7 @@ to quickly create a Cobra application.`,
 			os.Exit(1)
 		}
 
-		commandBlocks, err := markdown.ExtractReadme()
+		commandBlocks, err := markdown.ExtractFile(targetFilePath)
 		if err != nil {
 			fmt.Println("Error occured")
 			fmt.Println(err)

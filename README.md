@@ -7,7 +7,7 @@ mdrun is a task runner that uses an ambiguous search to select and execute comma
 ## Setup
 
 ```
-$ go install github.com/yammerjp/mdrun
+$ go install github.com/yammerjp/mdrun@latest
 ```
 
 ## Run

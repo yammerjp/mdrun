@@ -11,10 +11,34 @@ go install github.com/yammerjp/mdrun
 
 ## Run
 
-### list commands
+### List Commands
 
 ```
-mdrun list
+$ mdrun list
+```
+
+### Show a Command
+
+```
+$ mdrun --dry-run
+```
+
+### Run a Command
+
+```
+$ mdrun
+```
+
+### Help
+
+```
+$ mdrun --help
+```
+
+### Specify Task Defined Markdown File
+
+```
+$ mdrun --target path/to/markdownfile.md
 ```
 
 ## Development

@@ -23,11 +23,11 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 	"github.com/spf13/cobra"
-	"github.com/yammerjp/mdrun/markdown"
 	"github.com/yammerjp/mdrun/executor"
+	"github.com/yammerjp/mdrun/markdown"
 	"github.com/yammerjp/mdrun/selector"
+	"os"
 )
 
 // runCmd represents the run command

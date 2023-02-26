@@ -2,10 +2,10 @@ package markdown
 
 import (
 	"fmt"
-	"io/ioutil"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/ast"
 	"github.com/yuin/goldmark/text"
+	"io/ioutil"
 )
 
 func ExtractReadme() ([]CommandBlock, error) {
@@ -28,23 +28,23 @@ func Extract(content []byte) ([]CommandBlock, error) {
 	cb := &CommandBlock{}
 	err := ast.Walk(root, func(n ast.Node, entering bool) (ast.WalkStatus, error) {
 		s := ast.WalkStatus(ast.WalkContinue)
-		if ! entering {
+		if !entering {
 			return s, nil
 		}
-		switch(n.Kind()) {
-			case ast.KindHeading:
-				cb.Title = nodeRawString(n, content)
-			case ast.KindFencedCodeBlock:
-				cb.Command = nodeRawString(n, content)
-				ret = append(ret, *cb)
-				cb = &CommandBlock{}
+		switch n.Kind() {
+		case ast.KindHeading:
+			cb.Title = nodeRawString(n, content)
+		case ast.KindFencedCodeBlock:
+			cb.Command = nodeRawString(n, content)
+			ret = append(ret, *cb)
+			cb = &CommandBlock{}
 		}
 		return s, nil
 	})
 	return ret, err
 }
 
-func nodeRawString(node ast.Node, content []byte) (string) {
+func nodeRawString(node ast.Node, content []byte) string {
 	ret := ""
 	for i := 0; i < node.Lines().Len(); i++ {
 		line := node.Lines().At(i)

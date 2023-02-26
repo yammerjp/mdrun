@@ -23,9 +23,9 @@ package cmd
 
 import (
 	"fmt"
-	"os"
 	"github.com/spf13/cobra"
 	"github.com/yammerjp/mdrun/markdown"
+	"os"
 )
 
 // listCmd represents the list command
@@ -40,7 +40,7 @@ This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		commandBlocks, err := markdown.ExtractReadme()
-		if (err != nil) {
+		if err != nil {
 			fmt.Println("Error occured")
 			fmt.Println(err)
 			os.Exit(1)

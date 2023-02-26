@@ -23,9 +23,15 @@ func rmLineHeadDollerAndPercent(s string) string {
 	return re.ReplaceAllString(s, "")
 }
 
+func rmCommentLine(s string) string {
+	re := regexp.MustCompilePOSIX("#.*\n")
+	return re.ReplaceAllString(s, "")
+}
+
 func (c CommandBlock) CommandOneLineString() string {
 	cmd := c.Command
 	cmd = strings.ReplaceAll(c.Command, "\\\n", " ")
+	cmd = rmCommentLine(cmd)
 	cmd = rmLastBr(cmd)
 	cmd = rmLineHeadDollerAndPercent(cmd)
 	cmd = strings.ReplaceAll(cmd, "\n", "; ")

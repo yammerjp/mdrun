@@ -21,6 +21,7 @@ mdrun list
 
 ```
 $ echo "hello, world"
+# comment
 $ echo "hello, world"
  % ls -al
  $echo "hello"

@@ -17,10 +17,12 @@ go install github.com/yammerjp/mdrun
 mdrun list
 ```
 
-## Development
-
-### test
+## Debug for mdrun
 
 ```
-$ ./test.sh
+$ echo "hello, world"
+$ echo "hello, world"
+ % ls -al
+ $echo "hello"
+ %ls -al
 ```

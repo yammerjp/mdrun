@@ -5,7 +5,7 @@ import (
 )
 
 func TestExtractFile(t *testing.T) {
-	commandBlocks, err := ExtractFile("../README.md")
+	commandBlocks, err := ExtractFile("extract_test.go.md")
 	if err != nil {
 		t.Errorf("Error occuerd: %s", err)
 	}

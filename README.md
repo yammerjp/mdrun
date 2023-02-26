@@ -46,5 +46,5 @@ $ mdrun --target path/to/markdownfile.md
 ### test
 
 ```
-$ ./test.sh
+$ go test ./...
 ```

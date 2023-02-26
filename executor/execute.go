@@ -1,18 +1,36 @@
 package executor
 
 import (
+	"bufio"
 	"fmt"
+	"io"
+	"log"
 	"os"
 	"os/exec"
 )
 
 func Execute(commandString string) {
+	fmt.Fprintf(os.Stderr, "$ %s\n\n", commandString)
 	execCmd := exec.Command("sh", "-c", commandString)
-	result, err := execCmd.Output()
+	stdout, err := execCmd.StdoutPipe()
 	if err != nil {
-		fmt.Println("Error occured")
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
-	fmt.Println(string(result))
+	stderr, err := execCmd.StderrPipe()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	execCmd.Start()
+	go scanAndPrint(stdout, os.Stdout)
+	go scanAndPrint(stderr, os.Stderr)
+	execCmd.Wait()
+}
+
+func scanAndPrint(r io.ReadCloser, fp *os.File) {
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		m := scanner.Text()
+		fmt.Fprintln(fp, m)
+	}
 }

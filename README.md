@@ -1,12 +1,13 @@
-# mdrun
+# mdrun: Task runner for commands defined in markdown
 
-mdrun is task runnner of shell commands.
-You can select running commands with fizzy finder from sample commands written in README.md or another specified Markdown file.
+mdrun is a task runner that uses an ambiguous search to select and execute commands defined in code blocks in markdown files such as README.md.
+
+![demo](demo.gif)
 
 ## Setup
 
 ```
-go install github.com/yammerjp/mdrun
+$ go install github.com/yammerjp/mdrun
 ```
 
 ## Run

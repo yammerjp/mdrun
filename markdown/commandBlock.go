@@ -24,7 +24,7 @@ func rmLineHeadDollerAndPercent(s string) string {
 }
 
 func rmCommentLine(s string) string {
-	re := regexp.MustCompilePOSIX("#.*\n")
+	re := regexp.MustCompilePOSIX("#.*$")
 	return re.ReplaceAllString(s, "")
 }
 

@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 	"github.com/yammerjp/mdrun/executor"
 	"github.com/yammerjp/mdrun/markdown"
 	"github.com/yammerjp/mdrun/selector"
+	"log"
 )
 
 func selectAndExecuteCommand(dryRun bool, targetFilePath string) {

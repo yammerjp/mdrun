@@ -15,7 +15,7 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "mdrun",
 	Short: "Task runner for commands defined in markdown",
-	Long: `mdrun is a task runner that uses an ambiguous search to select and execute commands defined in code blocks in markdown files such as README.md.`,
+	Long:  `mdrun is a task runner that uses an ambiguous search to select and execute commands defined in code blocks in markdown files such as README.md.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {

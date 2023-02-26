@@ -2,16 +2,16 @@ package cmd
 
 import (
 	"fmt"
-	"log"
 	"github.com/spf13/cobra"
 	"github.com/yammerjp/mdrun/markdown"
+	"log"
 )
 
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
-  Short: "Show commands that defined in the target markdown file (default: README.md)",
-	Long: `The "mdrun list" subcommand produces standard output of the commands defined in the target markdown file, one line for each code block. This is the same as each line that is ambiguously searched when the "mdrun" command is executed.`,
+	Short: "Show commands that defined in the target markdown file (default: README.md)",
+	Long:  `The "mdrun list" subcommand produces standard output of the commands defined in the target markdown file, one line for each code block. This is the same as each line that is ambiguously searched when the "mdrun" command is executed.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		commandBlocks, err := markdown.ExtractFile(targetFilePath)
 		if err != nil {

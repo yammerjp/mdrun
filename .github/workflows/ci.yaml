@@ -14,9 +14,6 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Setup project
-        run: go install
-
       - name: Build
         run: go build
 

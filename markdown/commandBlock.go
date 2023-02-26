@@ -28,6 +28,11 @@ func rmCommentLine(s string) string {
 	return re.ReplaceAllString(s, "")
 }
 
+func rmEmptyLine(s string) string {
+	re := regexp.MustCompilePOSIX("^( )*\n")
+	return re.ReplaceAllString(s, " ")
+}
+
 func (c CommandBlock) CommandOneLineString() string {
 	cmd := c.Command
 	cmd = strings.ReplaceAll(c.Command, "\\\n", " ")

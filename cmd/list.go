@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"github.com/spf13/cobra"
 	"github.com/yammerjp/mdrun/markdown"
-	"os"
 )
 
 // listCmd represents the list command
@@ -20,9 +20,7 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		commandBlocks, err := markdown.ExtractFile(targetFilePath)
 		if err != nil {
-			fmt.Println("Error occured")
-			fmt.Println(err)
-			os.Exit(1)
+			log.Fatal(err)
 		}
 		for _, commandBlock := range commandBlocks {
 			fmt.Println(commandBlock.CommandOneLineString() + " #" + commandBlock.Title)

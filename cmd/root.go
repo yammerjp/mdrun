@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -25,9 +26,7 @@ to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		dryRun, err := cmd.Flags().GetBool("dry-run")
 		if err != nil {
-			fmt.Println("Error occured")
-			fmt.Println(err)
-			os.Exit(1)
+			log.Fatal(err)
 		}
 		selectAndExecuteCommand(dryRun, targetFilePath)
 	},
@@ -38,7 +37,7 @@ to quickly create a Cobra application.`,
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
-		os.Exit(1)
+		log.Fatal(err)
 	}
 }
 
